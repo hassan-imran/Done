@@ -30,6 +30,10 @@
             <button onclick="login(document.getElementById('userName').value,document.getElementById('userPass').value)">Login</button>
         </p>
 
+        <p>
+            <button onclick="guest()" style="float:left;">Login as a guest</button>
+        </p>
+
     </div>
 
     <div id="internal">
@@ -40,6 +44,13 @@
         </div>
 
         <div id="reminder" style="display:block; margin-top:60px;">
+            <button id="add" onclick="addIt()">Add a reminder</button>
+            <div id="adding" style="display:none;">
+                <br>
+                <input type="text" placeholder="Title" id="remindTitle"><br><br>
+                <input type="time" placeholder="Time" id="remindTime">
+    
+            </div>
 
         </div>
 

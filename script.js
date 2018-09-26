@@ -32,10 +32,15 @@ function addRemind() {
     var a = document.getElementById("remindTitle").value;
     var b = document.getElementById("remindTime").value;
     var c = document.getElementById("remindMsg").value;
-    if (a && b != null) {
+
+    if (a && b) {
         reminders.push([a, b, c]);
+        update();
     }
-    update();
+    else {
+        document.getElementById("remindTitle").style.boxShadow = "0 0 5px red";
+        document.getElementById("remindTime").style.boxShadow = "0 0 5px red";
+    }
 }
 
 function update() {

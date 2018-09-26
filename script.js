@@ -52,6 +52,7 @@ function update() {
 
     else {
         document.getElementById("reminderTable").style.display = "block";
+        document.getElementById("reminderTableBody").innerHTML = "";
         document.getElementById("noReminder").style.display = "none";
 
         for (var i = 0; i < reminders.length; i++) {

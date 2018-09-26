@@ -48,9 +48,20 @@
             <div id="adding" style="display:none;">
                 <br>
                 <input type="text" placeholder="Title" id="remindTitle"><br><br>
-                <input type="time" placeholder="Time" id="remindTime">
-    
+                <input type="time" placeholder="Time" id="remindTime"><br><br>
+                <textarea name="" id="remindMsg" cols="30" rows="10"></textarea><br><br>
+                <button onclick="addRemind()">Add</button>
             </div>
+
+            <table id="reminderTable" style="display:none;">
+                <thead>
+                    <tr>
+                        <th>Reminder</th>
+                        <th>Time</th>
+                        <th>Message</th>
+                    </tr>
+                </thead>
+            </table>
 
         </div>
 

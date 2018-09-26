@@ -15,7 +15,7 @@ function login(a, b) {
 }
 
 function guest() {
-    login("guest","Guest123");
+    login("guest", "Guest123");
 }
 
 function logOut() {
@@ -28,8 +28,23 @@ function addIt() {
 
 }
 
-var reminders = [];
-
-if (reminders.length == 0) {
-    document.getElementById("reminder").innerHTML += "<br><br>You have no reminder";
+function addRemind() {
+    var a = document.getElementById("remindTitle").value;
+    var b = document.getElementById("remindTime").value;
+    var c = document.getElementById("remindMsg").value;
+    reminders.push([a, b, c]);
+    update();
 }
+
+function update() {
+    document.getElementById("adding").style.display = "none";
+    if (reminders.length == 0) {
+        document.getElementById("reminder").innerHTML += "<br><br>You have no reminder";
+    }
+    for (var i = 0; i < reminders.length; i++) {
+        document.getElementById("reminderTable").style.display = "block";
+        document.getElementById("reminderTable").innerHTML += "<tr id=row"+i+"><td>"+reminders[i][0]+"</td><td>" + reminders[i][1] + "</td><td>" + reminders[i][2] + "</td></tr>";
+    }
+}
+
+var reminders = [];

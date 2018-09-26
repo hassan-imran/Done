@@ -32,7 +32,9 @@ function addRemind() {
     var a = document.getElementById("remindTitle").value;
     var b = document.getElementById("remindTime").value;
     var c = document.getElementById("remindMsg").value;
-    reminders.push([a, b, c]);
+    if (a && b != null) {
+        reminders.push([a, b, c]);
+    }
     update();
 }
 
@@ -43,7 +45,7 @@ function update() {
     }
     for (var i = 0; i < reminders.length; i++) {
         document.getElementById("reminderTable").style.display = "block";
-        document.getElementById("reminderTable").innerHTML += "<tr id=row"+i+"><td>"+reminders[i][0]+"</td><td>" + reminders[i][1] + "</td><td>" + reminders[i][2] + "</td></tr>";
+        document.getElementById("reminderTableBody").innerHTML += "<tr id=row" + i + "><td>" + reminders[i][0] + "</td><td>" + reminders[i][1] + "</td><td>" + reminders[i][2] + "</td></tr>";
     }
 }
 

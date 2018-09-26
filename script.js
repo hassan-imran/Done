@@ -41,12 +41,18 @@ function addRemind() {
 function update() {
     document.getElementById("adding").style.display = "none";
     if (reminders.length == 0) {
-        document.getElementById("reminder").innerHTML += "<br><br>You have no reminder";
+        document.getElementById("noReminder").style.display = "block";
     }
-    for (var i = 0; i < reminders.length; i++) {
+
+    else {
         document.getElementById("reminderTable").style.display = "block";
-        document.getElementById("reminderTableBody").innerHTML += "<tr id=row" + i + "><td>" + reminders[i][0] + "</td><td>" + reminders[i][1] + "</td><td>" + reminders[i][2] + "</td></tr>";
+        document.getElementById("noReminder").style.display = "none";
+
+        for (var i = 0; i < reminders.length; i++) {
+            document.getElementById("reminderTableBody").innerHTML += "<tr id=row" + i + "><td>" + reminders[i][0] + "</td><td>" + reminders[i][1] + "</td><td>" + reminders[i][2] + "</td></tr>";
+        }
     }
 }
 
 var reminders = [];
+update();

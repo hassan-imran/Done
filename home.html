@@ -18,6 +18,7 @@
     <script>
         function checkKey() {
             var accountKey = localStorage.getItem("account");
+            users = JSON.parse(localStorage.getItem("users"));
             if (users[accountKey] === undefined) {
                 window.location.assign("401.html");
             }

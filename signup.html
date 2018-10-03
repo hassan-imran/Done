@@ -7,6 +7,14 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Done - SignUp now for free</title>
     <link rel="stylesheet" href="style.css">
+    <script>
+        window.onload = function(){
+            var a = localStorage.getItem("account");
+            if (a != -1) {
+                window.location.assign("403.html");
+            }
+        }
+    </script>
 </head>
 
 <body>
@@ -25,8 +33,8 @@
         <label for="">
             <input type="text" placeholder="Your user ID" id="userName">
         </label>
-            <p id="already">This ID already exists</p>
-            <p id="invalid_id">Enter a valid Id</p>
+        <p id="already">This ID already exists</p>
+        <p id="invalid_id">Enter a valid Id</p>
 
         <label for="">
             <input type="password" placeholder="Password" id="userPass">
@@ -45,15 +53,7 @@
         </p>
 
     </form>
-
-
     <script src="script.js"></script>
-    <script>
-        window.onload = function() {
-            localStorage.setItem("account", -1);
-        }
-    </script>
-
 </body>
 
 </html>

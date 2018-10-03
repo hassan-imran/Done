@@ -22,7 +22,7 @@ function verify() {
 }
 
 function signUp() {
-    var a = document.getElementById("userName").value.toLowerCase();
+    var a = document.getElementById("userName").value;
     var b = document.getElementById("userPass").value;
     var c = true;
     if (!a) {
@@ -37,7 +37,7 @@ function signUp() {
 
     else {
         for (var i = 0; i < users.length; i++) {
-            if (users[i][0].toLowerCase === a) {
+            if (users[i][0].toLowerCase() === a.toLowerCase()) {
                 document.getElementById("already").style.display = "block";
                 c = false;
                 break;
@@ -46,13 +46,9 @@ function signUp() {
     }
 
     if (c) {
-        users.push([a, b]);
-        for (var i = 0; i < users.length; i++) {
-            if (users[i][0] === a && users[i][1] === b) {
-                var accountKey = i;
-                localStorage.setItem("account", accountKey);
-                window.location.assign("home.html");
-            }
-        }
-
+        var x = users.push([a, b]);
+        localStorage.setItem("account", x - 1);
+        localStorage.setItem("users", JSON.stringify(users));
+        window.location.replace("home.html");
     }
+}

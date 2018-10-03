@@ -24,19 +24,29 @@ function verify() {
 function signUp() {
     var a = document.getElementById("userName").value.toLowerCase();
     var b = document.getElementById("userPass").value;
+    var c = true;
     if (!a) {
         document.getElementById("invalid_id").style.display = "block";
+        c = false;
     }
+
+    else if (!b) {
+        document.getElementById("invalid_pass").style.display = "block";
+        c = false;
+    }
+
     else {
         for (var i = 0; i < users.length; i++) {
             if (users[i][0].toLowerCase === a) {
                 document.getElementById("already").style.display = "block";
+                c = false;
+                break;
             }
         }
     }
 
-    if (!b) {
-        document.getElementById("invalid_pass").style.display = "block";
+    if (c) {
+        users.push([a,b]);
     }
 
 }

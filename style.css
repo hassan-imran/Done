@@ -21,7 +21,7 @@ body {
     padding: 5px;
 }
 
-#invalid{
+#invalid, #already, #invalid_id, #invalid_pass{
     color: red;
     font-size: 18px;
     display: none;

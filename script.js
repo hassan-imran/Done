@@ -21,4 +21,22 @@ function verify() {
     }
 }
 
+function signUp() {
+    var a = document.getElementById("userName").value.toLowerCase();
+    var b = document.getElementById("userPass").value;
+    if (!a) {
+        document.getElementById("invalid_id").style.display = "block";
+    }
+    else {
+        for (var i = 0; i < users.length; i++) {
+            if (users[i][0].toLowerCase === a) {
+                document.getElementById("already").style.display = "block";
+            }
+        }
+    }
 
+    if (!b) {
+        document.getElementById("invalid_pass").style.display = "block";
+    }
+
+}

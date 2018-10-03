@@ -25,18 +25,22 @@
         <label for="">
             <input type="text" placeholder="Your user ID" id="userName">
         </label>
+            <p id="already">This ID already exists</p>
+            <p id="invalid_id">Enter a valid Id</p>
 
         <label for="">
             <input type="password" placeholder="Password" id="userPass">
         </label>
 
+        <p id="invalid_pass">The password is invalid. Please Try another password!</p>
+
         <!-- we do not use a type submit button or an onsubmit form because it reloads the page  -->
 
-        <button type="button" onclick="signup()">
-            Login
+        <button type="button" onclick="signUp()">
+            Submit
         </button>
 
-        <p id="signUpHere">
+        <p>
             Already a member of this awesome app? <a href="index.html">Sign In!</a>
         </p>
 

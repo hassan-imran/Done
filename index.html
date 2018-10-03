@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Done - Your complete Reminder</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div id="top_header">
+        <h1>Done!</h1>
+
+        <div id="motto">
+            Reminders that get stuff done
+        </div>
+    </div>
+
+    <form action="" id="loginForm">
+        <h2>Sign in!</h2>
+        <p id="invalid">The user ID or password is incorrect</p>
+        <label for="">
+            <input type="text" placeholder="Your user ID" id="userName">
+        </label>
+
+        <label for="">
+            <input type="password" placeholder="Password" id="userPass">
+        </label>
+
+        <!-- we do not use a type submit button or an onsubmit form because it reloads the page  -->
+
+        <button type="button" onclick="verify()">
+            Login
+        </button>
+
+        <p id="signUpHere">
+            New to this awesome app? <a href="">Sign Up here!</a>
+        </p>
+
+    </form>
+
+
+    <script src="script.js"></script>
+    <script>
+        window.onload = function() {
+            localStorage.setItem("account", -1);
+        }
+    </script>
+
+</body>
+
+</html>

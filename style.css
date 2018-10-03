@@ -1,58 +1,83 @@
 
-body{
-    padding: 0;
+body {
     margin: 0;
+    background: #CCC;
 }
 
-#top_bar{
-    background-color: royalblue;
-    color: #EEE;
+#top_header {
+    background: royalblue;
+    color: white;
     text-align: center;
-    height: 70px;
-    line-height: 70px;  
 }
 
-#top_bar h1{
-    padding: 0;
+#top_header h1 {
     margin: 0;
+    padding: 25px;
+    background: #242424;
+    text-transform: uppercase;
 }
 
-#login{
-    margin: auto;
-    margin-top:160px;
-    max-width: 400px;
-    display: block;
+#motto {
+    padding: 5px;
 }
 
-#login input{
-    width:400px;
-    height: 40px;
-    line-height: 40px;
-    font-size: 20px;
-    padding: 10px;
-}
-
-#login button{
-    height: 50px;
-    padding: 10px;
-    font-size: 20px;
-    float: right;
-}
-
-#internal{
-    display: none;
-    padding: 20px;
-}
-
-#logoutContainer button{
-    height: 40px;
-    padding: 10px;
-    font-size: 20px;
-    float: right;
-}
-
-#notValid{
+#invalid{
     color: red;
+    font-size: 18px;
     display: none;
 }
 
+#loginForm {
+    background-color: #FFF;
+    /* color: #FFF; */
+    max-width: 400px;
+    margin: 20px auto;
+    text-align: center;
+    padding: 10px;
+    border-radius: 20px;
+}
+
+#loginForm input {
+    display: block;
+    margin: 10px auto;
+    height: 20px;
+    width: 250px;
+    padding: 5px;
+    border-width: 2px;
+    border-style: solid;
+    border-color: #FFF #FFF #AAA #FFF;
+    background-color: #FFF;
+    /* color: #FFF; */
+    transition: all 0.5s linear;
+}
+
+/* #loginForm input::placeholder{
+    color: #CCC;
+} */
+
+#loginForm input:focus {
+    border-color: #FFF #FFF royalblue #FFF;
+    outline: none;
+    /* box-shadow: 0px 0px 5px #FFF; */
+}
+
+#loginForm button {
+    background-color: royalblue;
+    color: #FFF;
+    border: 0px solid;
+    width: 80px;
+    height: 30px;
+    font-size: 16px;
+    border-radius: 10px;
+    transition: all 0.6s linear;
+}
+
+#loginForm button:hover {
+    background-color: rgb(102, 136, 238);
+    box-shadow: 0px 0px 7px #000;
+}
+
+#loginForm a {
+    text-decoration: none;
+    font-weight: 900;
+}

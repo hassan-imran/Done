@@ -6,25 +6,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Done!</title>
-
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <h1>Welcome</h1>
+    <div id="top_header">
+        <h1>Done!</h1>
+
+        <div id="motto"></div>
+    </div>
+
 
 
     <script src="script.js"></script>
     <script>
+
         function checkKey() {
-            var accountKey = localStorage.getItem("account");
+            accountKey = localStorage.getItem("account");
             users = JSON.parse(localStorage.getItem("users"));
             if (users[accountKey] === undefined) {
                 window.location.assign("401.html");
             }
         }
-
         checkKey();
+
+        document.getElementById("motto").innerHTML = users[accountKey][0];
+
+        
     </script>
 </body>
 

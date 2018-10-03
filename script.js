@@ -8,8 +8,8 @@ function verify() {
     for (var i = 0; i < users.length; i++) {
         if (users[i][0] === a && users[i][1] === b) {
             var accountKey = i;
-            window.location.assign("home.html");
             localStorage.setItem("account", accountKey);
+            window.location.assign("home.html");
         }
         else {
             x = -1;
@@ -46,7 +46,13 @@ function signUp() {
     }
 
     if (c) {
-        users.push([a,b]);
-    }
+        users.push([a, b]);
+        for (var i = 0; i < users.length; i++) {
+            if (users[i][0] === a && users[i][1] === b) {
+                var accountKey = i;
+                localStorage.setItem("account", accountKey);
+                window.location.assign("home.html");
+            }
+        }
 
-}
+    }

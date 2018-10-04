@@ -27,7 +27,7 @@ body {
     display: none;
 }
 
-#loginForm, #tableWrapper {
+#loginForm {
     background-color: #FFF;
     /* max-width: 400px; */
     margin: 20px 10px;
@@ -88,7 +88,25 @@ body {
     color: #444;
 }
 
-#remindTable {
-    margin: auto;
+#tableWrapper {
+    width: 100%;
 }
 
+#tableWrapper ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    flex: 1 0 auto;
+    padding: 0px;
+}
+
+#tableWrapper ul li input {
+    /* display: flex;
+    justify-content: space-around; */
+}
+
+.top_list {
+    font-weight: 800px;
+    font-size: 18px;
+    text-transform: uppercase;
+}

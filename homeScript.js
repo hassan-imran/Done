@@ -23,10 +23,10 @@ createRemindArray();
 
 function updateTable() {
     if (remindUser[accountKey].length > 0) {
-        document.getElementById("remindTable").getElementsByTagName("tbody")[0].innerHTML = "";
+        document.getElementById("list").innerHTML = "";
         document.getElementById("noRemind").style.display = "none";
         for (var i = 0; i < remindUser[accountKey].length; i += 3) {
-            document.getElementById("remindTable").getElementsByTagName("tbody")[0].innerHTML += "<tr id='row" + i + "'><td>" + remindUser[accountKey][i] + "</td><td>" + remindUser[accountKey][i + 1] + "</td><td>" + remindUser[accountKey][i + 2] + "</td><td><button onclick='edit(" + i + ")'>Edit</button><button onclick='del(" + i + ")'>Delete</button></td></tr>";
+            document.getElementById("list").innerHTML += "<ul id='row" + i + "'><li>" + remindUser[accountKey][i] + "</li><li>" + remindUser[accountKey][i + 1] + "</li><li>" + remindUser[accountKey][i + 2] + "</li><li><button onclick='edit(" + i + ")'>Edit</button><button onclick='del(" + i + ")'>Delete</button></li></ul>";
         }
         document.getElementById("remindTable").style.display = "block";
     }
@@ -45,7 +45,7 @@ function addNew() {
 }
 
 function edit(a) {
-    document.getElementById("row" + a).innerHTML = "<tr id='row" + a + "'><td><input id='remind" + a + "' type='text' value='" + remindUser[accountKey][a] + "'></td><td><input id='time" + a + "' type='time' value='" + remindUser[accountKey][a + 1] + "'></td><td><input id='msg" + a + "' type='text' value='" + remindUser[accountKey][a + 2] + "'></td><td><button onclick='updateRow(" + a + ")'>Update</button><button onclick='del(" + a + ")'>Delete</button></td></tr>";
+    document.getElementById("row" + a).innerHTML = "<ul id='row" + a + "'><li><input id='remind" + a + "' type='text' value='" + remindUser[accountKey][a] + "'></li><li><input id='time" + a + "' type='time' value='" + remindUser[accountKey][a + 1] + "'></li><li><input id='msg" + a + "' type='text' value='" + remindUser[accountKey][a + 2] + "'></li><li><button onclick='updateRow(" + a + ")'>Update</button><button onclick='del(" + a + ")'>Delete</button></li></ul>";
 }
 
 function updateRow(a) {

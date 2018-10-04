@@ -27,9 +27,8 @@ body {
     display: none;
 }
 
-#loginForm {
+#loginForm, #tableWrapper {
     background-color: #FFF;
-    /* color: #FFF; */
     max-width: 400px;
     margin: 20px auto;
     text-align: center;
@@ -81,3 +80,11 @@ body {
     text-decoration: none;
     font-weight: 900;
 }
+
+/*Home page stylings*/
+
+#noRemind {
+    font-size: 20px;
+    color: #444;
+}
+

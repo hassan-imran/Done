@@ -17,6 +17,28 @@
         <div id="motto"></div>
     </div>
 
+    <div id="tableWrapper">
+
+        <p id="noRemind">You have no reminders</p>
+
+        <table id="remindTable">
+            <thead>
+                <th>Reminder</th>
+                <th>Time</th>
+                <th>Message</th>
+                <th colspan="2">Actions</th>
+            </thead>
+            <tbody></tbody>
+        </table>
+
+        <div id="add">
+            <button onclick="addNew()">
+                Set a task
+            </button>
+        </div>
+
+    </div>
+
 
 
     <script src="script.js"></script>
@@ -25,7 +47,7 @@
         function checkKey() {
             accountKey = localStorage.getItem("account");
             users = JSON.parse(localStorage.getItem("users"));
-            if (users[accountKey] === undefined) {
+            if ((!accountKey) || (!users[accountKey])) {
                 window.location.assign("401.html");
             }
         }
@@ -33,7 +55,38 @@
 
         document.getElementById("motto").innerHTML = users[accountKey][0];
 
-        
+        var remindUser = [];
+
+        function createRemindArray() {
+            for (var i = 0; i < users.length; i++) {
+                remindUser[i] = [];
+            }
+        }
+
+        createRemindArray();
+
+        function updateTable() {
+            if (remindUser[accountKey].length > 0) {
+                document.getElementById("remindTable").getElementsByTagName("tbody")[0].innerHTML = "";
+                document.getElementById("noRemind").style.display = "none";
+                for (var i = 0; i < remindUser[accountKey].length; i += 3) {
+                    document.getElementById("remindTable").getElementsByTagName("tbody")[0].innerHTML += "<tr><td>" + remindUser[accountKey][i] + "</td><td>" + remindUser[accountKey][i+1] + "</td><td>" + remindUser[accountKey][i+2] + "</td><td><button>Delete</button></td></tr>";
+                }
+                document.getElementById("remindTable").style.display = "block";
+            }
+            else {
+                document.getElementById("remindTable").style.display = "none";
+                document.getElementById("noRemind").style.display = "block";
+            }
+        }
+
+        updateTable();
+
+        function addNew() {
+            remindUser[accountKey].push("", "", "");
+            updateTable();
+        }
+
     </script>
 </body>
 

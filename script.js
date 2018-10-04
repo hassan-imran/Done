@@ -9,12 +9,13 @@ function verify() {
         if (users[i][0].toLowerCase() === a.toLowerCase() && users[i][1] === b) {
             var accountKey = i;
             localStorage.setItem("account", accountKey);
+            localStorage.setItem("users", JSON.stringify(users));
             window.location.assign("home.html");
-            x=true;
+            x = true;
             break;
         }
     }
-    
+
     if (!x) {
         document.getElementById("invalid").style.display = "block";
         document.getElementById("userPass").value = "";
@@ -52,3 +53,8 @@ function signUp() {
         window.location.replace("home.html");
     }
 }
+
+
+/* Functions for home page */
+
+

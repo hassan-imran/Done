@@ -1,5 +1,29 @@
 # Done
 
-An app designed to have to do lists which are accessible from all your devices.
+An concept app designed to have to do lists which are accessible from all your devices.
 
-Right now it does have accounts such as login as guests or guest with Guest123 password but they all ahve common reminders that is the reminders aren't user specific yet. I'll do that in the future but not right now. first have to get the app up and running and later on we'll fix the accounts issue.
+************
+Ignore the UI as it was not the main focus while coding on this project, however I have tried my best to make it look reasonable.
+************
+
+2 default users
+
+admin ---Username
+Admin123 ---Password
+
+guest ---UserName
+Guest123 ---Password
+
+Although you can sign up too!..
+
+***********************************************
+
+The program uses localStorage to verify accounts before logging in as a security feature.
+
+It also uses the same method to pass information between pages
+
+*********
+
+If you refresh the page the new accounts or any reminder data will be lost.
+
+However if you do not refresh the page the account data and the reminders will be there even if you login from different accounts.

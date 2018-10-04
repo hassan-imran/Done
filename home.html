@@ -87,7 +87,14 @@
             updateTable();
         }
 
-        function edit() { }
+        function edit() {
+
+        }
+
+        function del(a) {
+            remindUser[accountKey].splice(a,3);
+            updateTable();
+        }
 
     </script>
 </body>

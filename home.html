@@ -70,7 +70,7 @@
                 document.getElementById("remindTable").getElementsByTagName("tbody")[0].innerHTML = "";
                 document.getElementById("noRemind").style.display = "none";
                 for (var i = 0; i < remindUser[accountKey].length; i += 3) {
-                    document.getElementById("remindTable").getElementsByTagName("tbody")[0].innerHTML += "<tr id='row" + i + "'><td>" + remindUser[accountKey][i] + "</td><td>" + remindUser[accountKey][i + 1] + "</td><td>" + remindUser[accountKey][i + 2] + "</td><td><button onclick='edit(" + i + ")'>Edit</button><button onclick='del(" + i + ")'>Delete</button></td></tr>";
+                    document.getElementById("remindTable").getElementsByTagName("tbody")[0].innerHTML += "<tr id='row" + i/3 + "'><td>" + remindUser[accountKey][i] + "</td><td>" + remindUser[accountKey][i + 1] + "</td><td>" + remindUser[accountKey][i + 2] + "</td><td><button onclick='edit(" + i + ")'>Edit</button><button onclick='del(" + i + ")'>Delete</button></td></tr>";
                 }
                 document.getElementById("remindTable").style.display = "block";
             }
@@ -87,14 +87,17 @@
             updateTable();
         }
 
-        function edit() {
-
+        function edit(a) {
+            var rowNo = a / 3;
+            document.getElementById("row" + rowNo).innerHTML = "<tr id='row" + rowNo + "'><td><input type='text' value='"+remindUser[accountKey][a]+"'></td><td><input type='time' value='" + remindUser[accountKey][a + 1] + "'></td><td><input type='text' value='" + remindUser[accountKey][a + 2] + "'></td><td><button onclick='updateRow(" + a + ")'>Update</button><button onclick='del(" + a + ")'>Delete</button></td></tr>";
         }
 
         function del(a) {
-            remindUser[accountKey].splice(a,3);
+            remindUser[accountKey].splice(a, 3);
             updateTable();
         }
+
+        
 
     </script>
 </body>

@@ -54,7 +54,3 @@ function signUp() {
     }
 }
 
-
-/* Functions for home page */
-
-

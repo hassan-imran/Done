@@ -39,7 +39,7 @@
 
     </div>
 
-
+    <button onclick="logout()">Logout</button>
 
     <script src="script.js"></script>
     <script>
@@ -105,7 +105,10 @@
             updateTable();
         }
 
-
+        function logout(){
+            localStorage.removeItem("account");
+            window.location.assign("index.html");
+        }
 
     </script>
 </body>

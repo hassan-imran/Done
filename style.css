@@ -97,16 +97,17 @@ body {
     display: flex;
     justify-content: space-around;
     flex: 1 0 auto;
-    padding: 0px;
+    padding: 10px;
+    margin:0;
 }
 
-#tableWrapper ul li input {
-    /* display: flex;
-    justify-content: space-around; */
+#tableWrapper ul:nth-child(even) {
+    background-color: #CCC;
 }
 
 .top_list {
-    font-weight: 800px;
+    font-weight: 800;
     font-size: 18px;
     text-transform: uppercase;
+    background: #CCC;
 }

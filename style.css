@@ -1,7 +1,6 @@
 
 body {
     margin: 0;
-    background: #CCC;
 }
 
 #top_header {
@@ -29,8 +28,8 @@ body {
 
 #loginForm, #tableWrapper {
     background-color: #FFF;
-    max-width: 400px;
-    margin: 20px auto;
+    /* max-width: 400px; */
+    margin: 20px 10px;
     text-align: center;
     padding: 10px;
     border-radius: 20px;
@@ -86,5 +85,9 @@ body {
 #noRemind {
     font-size: 20px;
     color: #444;
+}
+
+#remindTable {
+    margin: auto;
 }
 

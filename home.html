@@ -85,19 +85,27 @@
         function addNew() {
             remindUser[accountKey].push("", "", "");
             updateTable();
+            edit(remindUser[accountKey].length-3);
         }
 
         function edit(a) {
-            var rowNo = a / 3;
-            document.getElementById("row" + rowNo).innerHTML = "<tr id='row" + rowNo + "'><td><input type='text' value='"+remindUser[accountKey][a]+"'></td><td><input type='time' value='" + remindUser[accountKey][a + 1] + "'></td><td><input type='text' value='" + remindUser[accountKey][a + 2] + "'></td><td><button onclick='updateRow(" + a + ")'>Update</button><button onclick='del(" + a + ")'>Delete</button></td></tr>";
+            document.getElementById("row" + a).innerHTML = "<tr id='row" + a + "'><td><input id='remind" + a + "' type='text' value='" + remindUser[accountKey][a] + "'></td><td><input id='time" + a + "' type='time' value='" + remindUser[accountKey][a + 1] + "'></td><td><input id='msg" + a + "' type='text' value='" + remindUser[accountKey][a + 2] + "'></td><td><button onclick='updateRow(" + a + ")'>Update</button><button onclick='del(" + a + ")'>Delete</button></td></tr>";
         }
 
-        function del(a) {
-            remindUser[accountKey].splice(a,3);
+        function updateRow(a) {
+            var x = document.getElementById("remind"+a).value;
+            var y = document.getElementById("time"+a).value;
+            var z = document.getElementById("msg"+a).value;
+            remindUser[accountKey].splice(a,3,x,y,z);
             updateTable();
         }
 
-        
+        function del(a) {
+            remindUser[accountKey].splice(a, 3);
+            updateTable();
+        }
+
+
 
     </script>
 </body>

@@ -11,15 +11,7 @@ checkKey();
 
 document.getElementById("motto").innerHTML = users[accountKey][0];
 
-var remindUser = [];
-
-function createRemindArray() {
-    for (var i = 0; i < users.length; i++) {
-        remindUser[i] = [];
-    }
-}
-
-createRemindArray();
+remindUser = JSON.parse(localStorage.getItem("reminders")) ;
 
 function updateTable() {
     if (remindUser[accountKey].length > 0) {
@@ -53,6 +45,7 @@ function updateRow(a) {
     var y = document.getElementById("time" + a).value;
     var z = document.getElementById("msg" + a).value;
     remindUser[accountKey].splice(a, 3, x, y, z);
+    localStorage.setItem("reminders",JSON.stringify(remindUser));
     updateTable();
 }
 

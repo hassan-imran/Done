@@ -1,5 +1,20 @@
 
-var users = [['guest', 'Guest123'], ['admin', 'Admin123']];
+var users = [];
+var remindUser = [];
+
+function checkLocal() {
+    var a = JSON.parse(localStorage.getItem("users"));
+    if (a === undefined || a === null) {
+        users = [['guest', 'Guest123'], ['admin', 'Admin123']];
+        remindUser = [[], []];
+    }
+    else{
+        users = a;
+        remindUser = JSON.parse(localStorage.getItem("reminders"));
+    }
+}
+
+checkLocal();
 
 function verify() {
     var a = document.getElementById("userName").value;
@@ -10,6 +25,7 @@ function verify() {
             var accountKey = i;
             localStorage.setItem("account", accountKey);
             localStorage.setItem("users", JSON.stringify(users));
+            localStorage.setItem("reminders", JSON.stringify(remindUser));
             window.location.assign("home.html");
             x = true;
             break;
@@ -48,8 +64,10 @@ function signUp() {
 
     if (c) {
         var x = users.push([a, b]);
+        remindUser.push([]);
         localStorage.setItem("account", x - 1);
         localStorage.setItem("users", JSON.stringify(users));
+        localStorage.setItem("reminders", JSON.stringify(remindUser));
         window.location.replace("home.html");
     }
 }

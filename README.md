@@ -19,7 +19,7 @@ guest ---UserName
 Guest123 ---Password
 
 
-Although you can sign up too! (there is no database at the back so it doesn't save any details, although they are stored in localStorage)
+Although you can sign up too! (no details required, just a user ID and a password, which is also only stored in your localStorage because there is no database at the back!)
 
 ***********************************************
 

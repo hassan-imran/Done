@@ -10,8 +10,9 @@ function checkKey() {
 checkKey();
 
 document.getElementById("motto").innerHTML = users[accountKey][0];
+document.getElementsByTagName("title")[0].innerHTML += " dashboard (" + users[accountKey][0] + ")";
 
-remindUser = JSON.parse(localStorage.getItem("reminders")) ;
+remindUser = JSON.parse(localStorage.getItem("reminders"));
 
 function updateTable() {
     if (remindUser[accountKey].length > 0) {
@@ -45,7 +46,7 @@ function updateRow(a) {
     var y = document.getElementById("time" + a).value;
     var z = document.getElementById("msg" + a).value;
     remindUser[accountKey].splice(a, 3, x, y, z);
-    localStorage.setItem("reminders",JSON.stringify(remindUser));
+    localStorage.setItem("reminders", JSON.stringify(remindUser));
     updateTable();
 }
 

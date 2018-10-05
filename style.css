@@ -101,6 +101,10 @@ body {
     margin:0;
 }
 
+#tableWrapper ul li {
+    min-width: 24%;
+}
+
 #tableWrapper ul:nth-child(even) {
     background-color: #CCC;
 }

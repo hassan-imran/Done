@@ -43,9 +43,22 @@
     </form>
 
 
+    <script src="https://www.gstatic.com/firebasejs/5.5.6/firebase.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyCTgCahhu3Ge7y5isGf3JxyoH3AlHK8f6g",
+            authDomain: "doneapp2.firebaseapp.com",
+            databaseURL: "https://doneapp2.firebaseio.com",
+            projectId: "doneapp2",
+            storageBucket: "doneapp2.appspot.com",
+            messagingSenderId: "786827425800"
+        };
+        firebase.initializeApp(config);
+    </script>
     <script src="script.js"></script>
     <script>
-        window.onload = function() {
+        window.onload = function () {
             localStorage.setItem("account", -1);
         }
     </script>

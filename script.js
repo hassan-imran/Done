@@ -1,4 +1,17 @@
 
+(function () {
+    // Initialize Firebase
+    var config = {
+        apiKey: "AIzaSyCTgCahhu3Ge7y5isGf3JxyoH3AlHK8f6g",
+        authDomain: "doneapp2.firebaseapp.com",
+        databaseURL: "https://doneapp2.firebaseio.com",
+        projectId: "doneapp2",
+        storageBucket: "doneapp2.appspot.com",
+        messagingSenderId: "786827425800"
+    };
+    firebase.initializeApp(config);
+}());
+
 var users = [];
 var remindUser = [];
 
@@ -8,7 +21,7 @@ function checkLocal() {
         users = [['guest', 'Guest123'], ['admin', 'Admin123']];
         remindUser = [[], []];
     }
-    else{
+    else {
         users = a;
         remindUser = JSON.parse(localStorage.getItem("reminders"));
     }

@@ -6,7 +6,7 @@ An concept app designed to have to do lists which are accessible from all your d
 
 ## Go visit the project live at
 
-[myDoneApp.firebaseApp.com](https:\\www.myDoneApp.firebaseapp.com)
+[myDoneApp](https:\\www.myDoneApp.firebaseapp.com)
 
 
 ************
